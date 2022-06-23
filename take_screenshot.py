@@ -33,9 +33,7 @@ while True:
                 x,y = int(lm_list[tip].x*w), int(lm_list[tip].y*h)
                 cv2.circle(img, (x,y), 15, (255, 0, 0), cv2.FILLED)
 
-                # Escribiendo una condición para verificar si el dedo está doblado, 
-                # es decir, si el valor inicial de la punta del dedo es menor que 
-                # la posición inicial del dedo, que es la marca de referencia interior.
+                # Escribiendo una condición para verificar si el dedo está doblado, es decir, si el valor inicial de la punta del dedo es menor que la posición inicial del dedo, que es la marca de referencia interior.
                 # Para el índice del dedo, si el dedo está doblado, cambiar el color a verde
                 if lm_list[tip].x < lm_list[tip - 3].x:
                     cv2.circle(img, (x,y), 15, (0, 255, 0), cv2.FILLED)
@@ -72,8 +70,6 @@ while True:
 
     cv2.imshow("Seguimiento de manos", img)
     cv2.waitKey(1)
-
-
 
 
 
